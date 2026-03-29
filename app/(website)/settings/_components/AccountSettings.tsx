@@ -22,56 +22,67 @@ export default function AccountSettings({
 }: AccountSettingsProps) {
   return (
     <div className="flex flex-col gap-4">
-      <div className="bg-[#FFFFFF] dark:bg-[#FFFFFF0D] rounded-xl overflow-hidden">
-        {accountRows.map((item, index) => (
+      {/* Account Info */}
+      <div className="bg-white dark:bg-white/5 rounded-xl overflow-hidden">
+        {accountRows.map((item) => (
           <div
             key={item.label}
-            className={`flex justify-between items-center px-6 py-[18px] ${
-              index < accountRows.length - 1 ? "" : ""
-            }`}
+            className="flex justify-between items-center px-6 py-[18px]"
           >
-            <span className="text-xl text-[#2C2C2C] dark:text-[#FFFFFF]">{item.label}</span>
+            <span className="text-xl text-[#2C2C2C] dark:text-white">
+              {item.label}
+            </span>
             {item.value && (
-              <span className="text-xl text-[#2C2C2C] dark:text-[#FFFFFF]">{item.value}</span>
+              <span className="text-xl text-[#2C2C2C] dark:text-white">
+                {item.value}
+              </span>
             )}
           </div>
         ))}
       </div>
 
-      <div className="bg-[color:var(--surface)] rounded-xl px-6 py-[18px] flex justify-between items-center">
+      {/* Public Profile */}
+      <div className="bg-white dark:bg-white/5 rounded-xl px-6 py-[18px] flex justify-between items-center">
         <div>
-          <p className="text-sm font-medium text-[color:var(--text-primary)] mb-1">
+          <p className="text-xl font-medium text-[#2C2C2C] dark:text-white mb-1">
             Public Profile
           </p>
-          <p className="text-[13px] text-[color:var(--text-muted)]">
+          <p className="text-[16px] text-[#5E5E5E] dark:text-gray-300">
             Anyone on the platform can view your profile information and activity.
           </p>
         </div>
         <Toggle checked={publicProfile} onChange={onTogglePublicProfile} />
       </div>
 
-      <div className="bg-[color:var(--surface)] rounded-xl px-6 py-[18px] flex justify-between items-center">
+      {/* Mature Content (FIXED) */}
+      <div className="bg-white dark:bg-white/5 rounded-xl px-6 py-[18px] flex justify-between items-center">
         <div>
-          <p className="text-sm font-medium text-[color:var(--text-primary)] mb-1">
+          <p className="text-xl font-medium text-[#2C2C2C] dark:text-white mb-1">
             Mature Content
           </p>
-          <p className="text-[13px] text-[color:var(--text-muted)]">
+          <p className="text-[16px] text-[#5E5E5E] dark:text-gray-300">
             You must be 18+ to view mature stories or media.
           </p>
         </div>
         <Toggle checked={matureContent} onChange={onToggleMatureContent} />
       </div>
 
-      <div className="bg-[color:var(--surface)] rounded-xl px-6 py-[18px] border border-[color:var(--border)] cursor-pointer hover:border-[color:var(--text-muted)] transition-colors">
-        <p className="text-sm font-medium text-[color:var(--accent)] mb-1">Deactivate account</p>
-        <p className="text-[13px] text-[color:var(--text-muted)]">
+      {/* Deactivate Account (FIXED) */}
+      <div className="bg-white dark:bg-white/5 rounded-xl px-6 py-[18px]  cursor-pointer hover:border-gray-400 dark:hover:border-white/30 transition-colors">
+        <p className="text-xl font-medium text-[#EE0000] mb-1">
+          Deactivate account
+        </p>
+        <p className="text-[16px] text-[#5E5E5E] dark:text-gray-300">
           Deactivating will suspend your account until you sign back in.
         </p>
       </div>
 
-      <div className="bg-[color:var(--surface)] rounded-xl px-6 py-[18px] border border-[color:var(--border)] cursor-pointer hover:border-[color:var(--text-muted)] transition-colors">
-        <p className="text-sm font-medium text-[color:var(--accent)] mb-1">Delete account</p>
-        <p className="text-[13px] text-[color:var(--text-muted)]">
+      {/* Delete Account (FIXED) */}
+      <div className="bg-white dark:bg-white/5 rounded-xl px-6 py-[18px] cursor-pointer hover:border-[#EE0000] transition-colors">
+        <p className="text-xl font-medium text-[#EE0000] mb-1">
+          Delete account
+        </p>
+        <p className="text-[16px] text-[#5E5E5E] dark:text-gray-300">
           Permanently delete your account and all of your content.
         </p>
       </div>
