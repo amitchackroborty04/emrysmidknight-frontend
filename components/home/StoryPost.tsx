@@ -15,8 +15,8 @@ interface StoryPostProps {
   content: string;
   likes: number;
   comments: number;
-  image?: string; // optional image URL
-  video?: string; // optional video URL
+  image?: string;
+  video?: string;
 }
 
 const MAX_CHARS = 220;

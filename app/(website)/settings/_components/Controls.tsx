@@ -39,8 +39,8 @@ export function PasswordInput({ label, defaultValue = "password123" }: PasswordI
 
   return (
     <div className="flex flex-col gap-1.5">
-      <label className="text-[13px] text-[color:var(--text-secondary)]">{label}</label>
-      <div className="flex items-center bg-[color:var(--surface-alt)] border border-[color:var(--border)] rounded-lg px-3.5 py-2.5 gap-2">
+      <label className="text-[16px] text-[#2C2C2C] dark:text-[#FFFFFF]">{label}</label>
+      <div className="flex items-center  border border-[#D7D7D7] rounded-[4px] px-3.5 h-[50px] gap-2">
         <input
           type={show ? "text" : "password"}
           defaultValue={defaultValue}
@@ -50,7 +50,7 @@ export function PasswordInput({ label, defaultValue = "password123" }: PasswordI
           onClick={() => setShow(!show)}
           className="text-[color:var(--text-muted)] flex items-center bg-transparent border-0 cursor-pointer p-0"
         >
-          {show ? <EyeOff size={16} /> : <Eye size={16} />}
+          {show ? <EyeOff size={20} className="!text-[#7D7D7D] dark:!text-white" /> : <Eye size={20} className="!text-[#7D7D7D] dark:!text-white" />}
         </button>
       </div>
     </div>

@@ -17,16 +17,20 @@ export default function NotificationSettings<K extends string>({
   onToggle,
 }: NotificationSettingsProps<K>) {
   return (
-    <div className="bg-[color:var(--surface)] rounded-xl overflow-hidden">
-      {notificationRows.map((item, index) => (
+    <div className="  overflow-hidden space-y-4">
+      {notificationRows.map((item) => (
         <div
           key={item.key}
-          className={`flex justify-between items-center px-6 py-[18px] ${
-            index < notificationRows.length - 1 ? "border-b border-[color:var(--border)]" : ""
-          }`}
+          className={`flex justify-between items-center px-6 py-[20px] bg-white dark:bg-white/5 rounded-[8px]  `}
         >
-          <span className="text-sm text-[color:var(--text-primary)]">{item.label}</span>
-          <Toggle checked={Boolean(notifications[item.key])} onChange={() => onToggle(item.key)} />
+          <span className="text-xl text-[#2C2C2C] dark:text-white">
+            {item.label}
+          </span>
+
+          <Toggle
+            checked={Boolean(notifications[item.key])}
+            onChange={() => onToggle(item.key)}
+          />
         </div>
       ))}
     </div>
