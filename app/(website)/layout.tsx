@@ -28,7 +28,7 @@ export default function RootLayout({
         <Navbar />
 
         <div className="container mx-auto px-4 pb-12">
-          <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-4">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:gap-0">
             
             {/* Left Sidebar */}
             <aside className="hidden lg:block lg:col-span-2">
